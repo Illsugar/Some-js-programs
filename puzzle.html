@@ -1,0 +1,73 @@
+<meta charset="utf-8">
+<script>
+
+//функция для проверки правильности ответа
+	function checkAnswer (answer, answerUser)
+	{
+		if (answerUser == answer[0] || answerUser == answer[1] || answerUser == answer[2] || answerUser == answer[3])
+		{
+			alert("Ответ верный");
+			yes += 1;
+		}
+		else
+		{
+			alert("Ответ неверный");
+			no += 1; 
+		}
+	}
+	
+//фукция для изменения окончаний слова "загадка"
+	function endAnswer(n)
+	{
+		if (n == 1)
+		{
+			end = " загадку.";
+		}
+		else if (n == 0)
+		{
+			end = " загадок.";
+		}
+		else if (n == 2 || n == 3 || n == 4)
+		{
+			end = " загадки.";
+		}
+		return end;
+	}
+
+	alert("Отгадайте загадки")
+	var yes = 0; //счётчик верных ответов 
+	var no = 0; //счётчик неверных ответов
+
+	var answer1 = ["тропинка", "Тропинка", "тропа", "Тропа"]; 
+	var answer2 = ["молния", "Молния"];
+	var answer3 = ["эхо", "Эхо"];
+	var answer4 = ["часы","Часы"];
+
+//загадка 1
+	var answerUser1 = prompt("Меня все топчут, а я – все лучше.");
+	checkAnswer(answer1, answerUser1);
+
+
+//загадка 2
+	var answerUser2 = prompt("Сверкает, моргает, Кривые стрелы пускает.");
+	checkAnswer(answer2, answerUser2);
+
+
+//загадка 3
+	var answerUser3 = prompt("Не живое, а на всех языках говорит.");
+	checkAnswer(answer3, answerUser3);
+
+
+//загадка 4
+	var answerUser4 = prompt("Что всегда идет, а с места не сойдет?");
+	checkAnswer(answer4, answerUser4);
+
+
+//окончания
+	var endYes = endAnswer (yes);
+	var endNo = endAnswer (no);
+
+//вывод данных на экран
+document.write("Вы отгадали " + yes + endYes + " Вы не отгадали " + no + endNo); 
+
+</script>
